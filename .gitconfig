@@ -1,0 +1,17 @@
+[user]
+	name = KC Wayman
+	email = kc.wayman@appian.com
+[push]
+	default = simple
+[core]
+	autocrlf = input
+	excludesfile = /Users/kc.wayman/.gitignore-global
+	pager = 
+[color]
+	ui = true
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	st = status
+    l = log --pretty=format':[%ad] %h | %an: %s'
