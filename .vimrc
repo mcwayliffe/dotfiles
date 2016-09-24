@@ -1,23 +1,17 @@
 " ----------------------------
-" VUNDLE 
+" VUNDLE
 " ----------------------------
 set nocompatible " Don't allow running as vi
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
+filetype plugin on
 
 " ----------------------------
-" Settings 
+" Settings
 " ----------------------------
 
 syntax on " Why is this not a default?
 set expandtab tabstop=2 shiftwidth=2 " Set reasonable tabbing behavior
-set mouse=a " Turn on mouse interaction for all modes
 set number " Turn on line numbers
-set ruler " Turn on positioning in bottom right 
+set ruler " Turn on positioning in bottom right
 set hlsearch " Turn on search highlighting
 set incsearch " Make vi search behave like EMACS's I-Search
 
@@ -29,24 +23,35 @@ set smartcase
 " Useful Key Mappings
 " ----------------------------
 
-let mapleader="," 
+let mapleader=","
 
 " Use ctrl-c to get rid of search highlighting
-nnoremap <Leader>l :nohl<CR> 
+nnoremap <Leader>l :nohl<CR>
 
 " ctrl-n inserts newline
-nnoremap <C-n> O<Esc> 
+nnoremap <C-n> O<Esc>
 
-" Ctrl-" to change tabs
+" Ctrl-t" to change tabs
 nnoremap <C-t> gt
+
+" Ctrl-k to exit insert mode
+inoremap <C-k> <Esc>
+
+" Navigate between splits like a regular person
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " ----------------------------
 " New Commands
 " ----------------------------
 
 " ----------------------------
-" Autocommands  
+" Autocommands
 " ----------------------------
 
 " Highlight gradle files correctly
-autocmd BufRead,BufNewFile *.gradle setlocal syntax=groovy 
+autocmd BufRead,BufNewFile *.gradle setlocal syntax=groovy
+" Strip trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e

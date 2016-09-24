@@ -6,7 +6,7 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/kc.wayman/.gitignore-global
-	pager = 
+	pager =
 [color]
 	ui = true
 [alias]
@@ -14,4 +14,4 @@
 	co = checkout
 	br = branch
 	st = status
-    l = log --pretty=format':[%ad] %h | %an: %s'
+  l = log --pretty=format':[%ad] %h | %an: %s'
