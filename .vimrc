@@ -34,9 +34,6 @@ nnoremap <C-n> O<Esc>
 " Ctrl-t" to change tabs
 nnoremap <C-t> gt
 
-" Ctrl-k to exit insert mode
-inoremap <C-k> <Esc>
-
 " Navigate between splits like a regular person
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
