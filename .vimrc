@@ -41,10 +41,17 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Insert a single character with space bar
-:nnoremap <Space> i_<Esc>r
+nnoremap <Space> i_<Esc>r
 
 " Make backspace key work on Linux
-set backspace=2 
+set backspace=2
+
+" Make arrow keys into scroll keys
+noremap <Up> <C-y>
+noremap <Down> <C-e>
+noremap <Left> <C-u>
+noremap <Right> <C-d>
+
 " ----------------------------
 " New Commands
 " ----------------------------
