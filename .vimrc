@@ -40,6 +40,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Insert a single character with space bar
+:nnoremap <Space> i_<Esc>r
+
+" Make backspace key work on Linux
+set backspace=2 
 " ----------------------------
 " New Commands
 " ----------------------------
@@ -50,5 +55,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " Highlight gradle files correctly
 autocmd BufRead,BufNewFile *.gradle setlocal syntax=groovy
+
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e

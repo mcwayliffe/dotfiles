@@ -7,11 +7,13 @@
 	autocrlf = input
 	excludesfile = /Users/kc.wayman/.gitignore-global
   pager = less -F -X
-[color]
-	ui = true
+  editor = vim
 [alias]
 	ci = commit
 	co = checkout
 	br = branch
 	st = status
   l = log --pretty=format':[%ad] %h | %an: %s'
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[color]
+	ui = true
