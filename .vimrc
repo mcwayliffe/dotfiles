@@ -19,6 +19,9 @@ set incsearch " Make vi search behave like EMACS's I-Search
 set ignorecase
 set smartcase
 
+" Clipboard integration
+set clipboard=unnamedplus
+
 " ----------------------------
 " Useful Key Mappings
 " ----------------------------
