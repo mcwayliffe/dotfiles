@@ -20,7 +20,7 @@ set ignorecase
 set smartcase
 
 " Clipboard integration
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " ----------------------------
 " Useful Key Mappings
