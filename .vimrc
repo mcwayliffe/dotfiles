@@ -37,11 +37,12 @@ nnoremap <C-n> O<Esc>
 " Ctrl-t" to change tabs
 nnoremap <C-t> gt
 
-" Navigate between splits like a regular person
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Scroll from the home row (except can't use <C-l>
+" because that's for tmux, so leave <C-u> as up
+" since that's a comfortable default anyway)
+nnoremap <C-j> <C-e>
+nnoremap <C-k> <C-y>
+nnoremap <C-h> <C-d>
 
 " Insert a single character with space bar
 nnoremap <Space> i_<Esc>r
