@@ -22,6 +22,9 @@ set smartcase
 " Clipboard integration
 set clipboard=unnamed
 
+" Splits open where I expect them to
+set splitbelow splitright
+
 " ----------------------------
 " Useful Key Mappings
 " ----------------------------
