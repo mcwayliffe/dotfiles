@@ -31,7 +31,7 @@ set splitbelow splitright
 
 let mapleader=","
 
-" Use ctrl-c to get rid of search highlighting
+" Shortcut to remove search highlighting
 nnoremap <Leader>l :nohl<CR>
 
 " ctrl-n inserts newline
@@ -59,9 +59,23 @@ noremap <Down> <C-e>
 noremap <Left> <C-u>
 noremap <Right> <C-d>
 
+" Add a way to comment a selection of lines
+nnoremap <Leader>/ :call CommentLine(getline('.'))<CR>
+vnoremap <Leader>/ :call CommentLine(getline('.'))<CR>
+
 " ----------------------------
 " New Commands
 " ----------------------------
+function! CommentLine(line)
+  if(&ft == 'groovy')
+    let a:chars = split(a:line, '\zs')
+    if(a:chars[0] ==? "\/" && a:chars[1] ==? "\/" )
+      s/\/\///g
+    else
+      s/^/\/\//g
+    endif
+  endif
+endfunction
 
 " ----------------------------
 " Autocommands
