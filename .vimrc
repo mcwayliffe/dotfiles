@@ -34,6 +34,9 @@ let mapleader=","
 " Shortcut to remove search highlighting
 nnoremap <Leader>l :nohl<CR>
 
+" Shortcut to force screen redraw
+nnoremap <Leader>r :redraw!<CR>
+
 " ctrl-n inserts newline
 nnoremap <C-n> O<Esc>
 
