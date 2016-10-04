@@ -5,7 +5,6 @@
 "  don't bother with setting it up
 set nocompatible
 if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
-  echo 'Vundle installed -- installing plugins'
   filetype off
 
   set rtp+=~/.vim/bundle/Vundle.vim
@@ -14,8 +13,6 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   Plugin 'VundleVim/Vundle.vim'
 
   call vundle#end()
-else
-  echo 'Vundle not installed -- ignoring plugin directives'
 endif
 filetype plugin on
 " ----------------------------
@@ -45,10 +42,10 @@ set splitbelow splitright
 let mapleader=","
 
 " Shortcut to remove search highlighting
-nnoremap <Leader>l :nohl<CR>
+nnoremap <silent> <Leader>l :nohl<CR>
 
 " Shortcut to force screen redraw
-nnoremap <Leader>r :redraw!<CR>
+nnoremap <silent> <Leader>r :redraw!<CR>
 
 " ctrl-n inserts newline
 nnoremap <C-n> O<Esc>
@@ -76,8 +73,8 @@ noremap <Left> <C-u>
 noremap <Right> <C-d>
 
 " Add a way to comment a selection of lines
-nnoremap <Leader>/ :call CommentLine(getline('.'))<CR>
-vnoremap <Leader>/ :call CommentLine(getline('.'))<CR>
+nnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
+vnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
 
 " ----------------------------
 " New Commands
