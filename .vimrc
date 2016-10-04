@@ -70,7 +70,7 @@ vnoremap <Leader>/ :call CommentLine(getline('.'))<CR>
 " New Commands
 " ----------------------------
 function! CommentLine(line)
-  if(&ft == 'groovy')
+  if(&ft == 'groovy' || &ft == 'java')
     let a:chars = split(a:line, '\zs')
     if(a:chars[0] ==? "\/" && a:chars[1] ==? "\/" )
       s/\/\///g
