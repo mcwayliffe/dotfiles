@@ -1,13 +1,26 @@
 " ----------------------------
-" VUNDLE
+" PLUGINS
 " ----------------------------
-set nocompatible " Don't allow running as vi
-filetype plugin on
+"  Plugins are managed by Vundle -- if Vundle isn't installed, then
+"  don't bother with setting it up
+set nocompatible
+if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
+  echo 'Vundle installed -- installing plugins'
+  filetype off
 
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+
+  Plugin 'VundleVim/Vundle.vim'
+
+  call vundle#end()
+else
+  echo 'Vundle not installed -- ignoring plugin directives'
+endif
+filetype plugin on
 " ----------------------------
 " Settings
 " ----------------------------
-
 syntax on " Why is this not a default?
 set expandtab tabstop=2 shiftwidth=2 " Set reasonable tabbing behavior
 set number " Turn on line numbers
