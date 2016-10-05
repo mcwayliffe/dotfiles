@@ -12,6 +12,12 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
 
   Plugin 'VundleVim/Vundle.vim'
 
+  " Solarized plugin
+  Plugin 'altercation/vim-colors-solarized'
+  syntax enable
+  set background=dark
+  colorscheme solarized
+
   call vundle#end()
 endif
 filetype plugin on
@@ -25,7 +31,7 @@ set ruler " Turn on positioning in bottom right
 set hlsearch " Turn on search highlighting
 set incsearch " Make vi search behave like EMACS's I-Search
 
-" Logical, case-insensitve searching
+" Logical, case-insensitive searching
 set ignorecase
 set smartcase
 
