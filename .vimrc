@@ -13,10 +13,10 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   Plugin 'VundleVim/Vundle.vim'
 
   " Solarized plugin
-  Plugin 'altercation/vim-colors-solarized'
-  syntax enable
-  set background=dark
-  colorscheme solarized
+"  Plugin 'altercation/vim-colors-solarized'
+"  syntax enable
+"  set background=dark
+"  colorscheme solarized
 
   call vundle#end()
 endif
@@ -83,21 +83,27 @@ nnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
 vnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
 
 " ----------------------------
-" New Commands
+" Utility Functions
 " ----------------------------
 function! CommentLine(line)
   let a:chars = split(a:line, '\zs')
   if(&ft == 'groovy' || &ft == 'java')
     if(a:chars[0] ==? "\/" && a:chars[1] ==? "\/")
-      s/\/\///g
+      s/\/\///
     else
-      s/^/\/\//g
+      s/^/\/\//
+    endif
+  elseif(&ft == 'vim')
+    if(a:chars[0] ==? "\"")
+      s/"//
+    else
+      s/^/"/
     endif
   else
     if(a:chars[0] ==? "#")
-      s/#//g
+      s/\#//
     else
-      s/^/#/g
+      s/^/#/
     endif
   endif
 endfunction
