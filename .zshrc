@@ -8,6 +8,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
 export EDITOR='vim'
+export ZSH=$HOME/.oh-my-zsh
 
 # User configuration (machine-specific) goes in .zsh_profile
 source  $HOME/.zsh_profile
