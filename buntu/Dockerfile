@@ -6,6 +6,4 @@ RUN apt-get -y update && apt-get install -y vim \
   tmux \
   python
 
-# Make sure to mount your ssh credentials with
-# `docker run -it -v ~/.ssh:/root/.ssh buntu /bin/zsh`
 RUN mkdir -p /root/.ssh
