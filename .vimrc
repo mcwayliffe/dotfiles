@@ -121,11 +121,18 @@ function! CommentLine(line)
 endfunction
 
 " ----------------------------
-" Autocommands
+" Filetypes
 " ----------------------------
 
 " Highlight gradle files correctly
-autocmd BufRead,BufNewFile *.gradle setlocal syntax=groovy
+autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 
+" Highlight messages files
+autocmd BufRead,BufNewFile messages* set filetype=messages
+
+
+" ----------------------------
+" Helpers
+" ----------------------------
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
