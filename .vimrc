@@ -53,6 +53,9 @@ nnoremap <silent> <Leader>l :nohl<CR>
 " Shortcut to force screen redraw
 nnoremap <silent> <Leader>r :redraw!<CR>
 
+" Add single character at end of line
+nnoremap <Leader>a $a_<Esc>r
+
 " ctrl-n inserts newline
 nnoremap <C-n> O<Esc>
 
