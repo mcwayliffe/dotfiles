@@ -56,9 +56,12 @@ let mapleader="\<Space>"
 " Quicker saves
 nnoremap <silent> <Leader>w :w<CR>
 
-" More efficient line jumps
-nnoremap <CR> gg
-vnoremap <CR> gg
+" More efficient line jumps -- I would like this to be
+" **just** <CR>, but for some reason when I remap it
+" executing occasionally jumps me to the beginning of
+" my open buffer. *SHRUG*
+nnoremap <Leader><CR> gg
+vnoremap <Leader><CR> gg
 
 " Remove search highlighting
 nnoremap <silent> <Leader>l :nohl<CR>
@@ -117,6 +120,10 @@ vnoremap <Leader>v "+p
 " Append a line to the clipboard
 nnoremap <silent> <Leader>C :let @+=@+.getline('.')<CR>
 
+" Prepend to selection
+nnoremap <silent> <Leader>I :call PrependToLines()<CR>
+vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
+
 " ----------------------------
 " Utility Functions
 " ----------------------------
@@ -143,6 +150,10 @@ function! CommentLine(line)
   endif
 endfunction
 
+function! PrependToLines() range
+  let str = escape(input("Prepend: "), '\/.*$^~[]')
+	execute a:firstline . "," . a:lastline . 'substitute/^/' . str .'/'
+endfunction
 " ----------------------------
 " Filetypes
 " ----------------------------
