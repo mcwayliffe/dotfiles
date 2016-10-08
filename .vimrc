@@ -1,4 +1,12 @@
 " ----------------------------
+" Other source files
+" ----------------------------
+set runtimepath+=./vim-scripts
+
+" brackets.vim has the code to auto-bracket things
+runtime brackets.vim
+
+" ----------------------------
 " PLUGINS
 " ----------------------------
 "  Plugins are managed by Vundle -- if Vundle isn't installed, then
@@ -24,7 +32,6 @@ filetype plugin on
 " ----------------------------
 " Settings
 " ----------------------------
-set runtimepath+=./vim-scripts
 " Why is this not a default?
 syntax on
 " Set reasonable tabbing behavior
@@ -190,9 +197,4 @@ autocmd BufRead,BufNewFile messages* set filetype=messages
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-" ----------------------------
-" Other source files
-" ----------------------------
-" brackets.vim has the code to auto-bracket things
-runtime brackets.vim
 
