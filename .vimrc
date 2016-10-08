@@ -60,8 +60,8 @@ nnoremap <silent> <Leader>w :w<CR>
 " **just** <CR>, but for some reason when I remap it
 " executing occasionally jumps me to the beginning of
 " my open buffer. *SHRUG*
-nnoremap <Leader><CR> gg
-vnoremap <Leader><CR> gg
+nnoremap <CR> gg
+vnoremap <CR> gg
 
 " Remove search highlighting
 nnoremap <silent> <Leader>l :nohl<CR>
