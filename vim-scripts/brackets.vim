@@ -6,7 +6,6 @@ function! Bracket(selection, bracket_char)
   if (a:bracket_char ==? '(' || bracket_char ==? ')')
     return "(" + a:selection + ")"
   endif
-
 endfunction
 
 " If I only used Linux, I could shorthand this by
