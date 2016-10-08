@@ -47,20 +47,14 @@ set splitbelow splitright
 
 let mapleader=","
 
-" Shortcut to remove search highlighting
+" Remove search highlighting
 nnoremap <silent> <Leader>l :nohl<CR>
 
-" Shortcut to force screen redraw
+" Force screen redraw
 nnoremap <silent> <Leader>r :redraw!<CR>
 
-" Add single character at end of line
-nnoremap <Leader>a $a_<Esc>r
-
-" ctrl-n inserts newline
+" Insert newline
 nnoremap <C-n> O<Esc>
-
-" Ctrl-t" to change tabs
-nnoremap <C-t> gt
 
 " Scroll from the home row (except can't use <C-l>
 " because that's for tmux, so leave <C-u> as up
@@ -69,8 +63,14 @@ nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 nnoremap <C-h> <C-d>
 
-" Insert a single character with space bar
+" Insert a single character at cursor
 nnoremap <Space> i_<Esc>r
+
+" Insert single character at end of line
+nnoremap <Leader>$ $a_<Esc>r
+
+" Replace word with yank-register contents
+nnoremap <Leader>p viwp
 
 " Make backspace key work on Linux
 set backspace=2
