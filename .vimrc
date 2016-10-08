@@ -45,7 +45,7 @@ set splitbelow splitright
 " Useful Key Mappings
 " ----------------------------
 
-let mapleader=","
+let mapleader="\<Space>"
 
 " Remove search highlighting
 nnoremap <silent> <Leader>l :nohl<CR>
@@ -64,7 +64,7 @@ nnoremap <C-k> <C-y>
 nnoremap <C-h> <C-d>
 
 " Insert a single character at cursor
-nnoremap <Space> i_<Esc>r
+nnoremap <Leader>i i_<Esc>r
 
 " Insert single character at end of line
 nnoremap <Leader>$ $a_<Esc>r
