@@ -56,10 +56,7 @@ let mapleader="\<Space>"
 " Quicker saves
 nnoremap <silent> <Leader>w :w<CR>
 
-" More efficient line jumps -- I would like this to be
-" **just** <CR>, but for some reason when I remap it
-" executing occasionally jumps me to the beginning of
-" my open buffer. *SHRUG*
+" More efficient line jumps
 nnoremap <CR> gg
 vnoremap <CR> gg
 
