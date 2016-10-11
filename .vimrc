@@ -53,15 +53,15 @@ set splitbelow splitright
 
 let mapleader="\<Space>"
 
-" Quicker saves using only right hand
-nnoremap <silent> <Leader>j :w<CR>
+" Quicker saves
+nnoremap <silent> <Leader>w :w<CR>
 
-" Right-handed 'goto-characters'
-nnoremap <Leader>h F
-nnoremap <Leader>y T
-nnoremap <Leader>k f
-nnoremap <Leader>i t
+" Switch tabs
+nnoremap <Leader>j gT
+nnoremap <Leader>k gt
 
+" Quit
+nnoremap <silent> <Leader>q :q<CR>
 
 " More efficient line jumps
 nnoremap <CR> gg
