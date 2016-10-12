@@ -57,8 +57,8 @@ let mapleader="\<Space>"
 nnoremap <silent> <Leader>w :w<CR>
 
 " Switch tabs
-nnoremap <Leader>j gT
-nnoremap <Leader>k gt
+nnoremap <Leader>h gT
+nnoremap <Leader>l gt
 
 " Quit
 nnoremap <silent> <Leader>q :q<CR>
@@ -68,7 +68,7 @@ nnoremap <CR> gg
 vnoremap <CR> gg
 
 " Remove search highlighting
-nnoremap <silent> <Leader>l :nohl<CR>
+nnoremap <silent> <Leader>k :nohl<CR>
 
 " Force screen redraw
 nnoremap <silent> <Leader>r :redraw!<CR>
