@@ -53,6 +53,9 @@ set splitbelow splitright
 
 let mapleader="\<Space>"
 
+" Toggle between relative and absolute numbering
+nnoremap <silent> <Leader>n :call ToggleNumbering()<CR>
+
 " Quicker saves
 nnoremap <silent> <Leader>w :w<CR>
 
@@ -131,6 +134,13 @@ vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
 " ----------------------------
 " Utility Functions
 " ----------------------------
+function! ToggleNumbering()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunction
 function! CommentLine(line)
   let a:chars = split(a:line, '\zs')
   if(&ft == 'groovy' || &ft == 'java')
