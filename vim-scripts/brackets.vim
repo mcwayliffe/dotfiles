@@ -1,11 +1,12 @@
-" To get the currently selected text in visual
-" mode, use @* -- :call Bracket(@*, '(')
+" This map defines the various types of bracket characters
+let s:bracket_map = { '(': ')', '[': ']', '{': '}', '"': '"', '''': '''' }
+
 function! Bracket(selection, bracket_char)
-  let a:chars = split(a:selection, '\zs')
-  let a:begin = getpos("'<")
-  if (a:bracket_char ==? '(' || bracket_char ==? ')')
-    return "(" + a:selection + ")"
-  endif
+  for [key,val] in items(s:bracket_map)
+    if(key ==? a:bracket_char || val ==? a:bracket_char)
+      return key . a:selection . val
+    endif
+  endfor
 endfunction
 
 " If I only used Linux, I could shorthand this by
