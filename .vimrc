@@ -73,6 +73,9 @@ vnoremap <CR> gg
 " Remove search highlighting
 nnoremap <silent> <Leader>k :nohl<CR>
 
+" Right-handed window switching
+nnoremap <Leader>j <C-w><C-w>
+
 " Force screen redraw
 nnoremap <silent> <Leader>r :redraw!<CR>
 
