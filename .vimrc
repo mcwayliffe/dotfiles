@@ -1,4 +1,12 @@
 " ----------------------------
+" Other source files
+" ----------------------------
+set runtimepath+=./vim-scripts
+
+" brackets.vim has the code to auto-bracket things
+runtime brackets.vim
+
+" ----------------------------
 " PLUGINS
 " ----------------------------
 "  Plugins are managed by Vundle -- if Vundle isn't installed, then
@@ -46,6 +54,9 @@ set clipboard=unnamed
 
 " Splits open where I expect them to
 set splitbelow splitright
+
+" Simple smart indentation
+set autoindent
 
 " ----------------------------
 " Useful Key Mappings
@@ -102,11 +113,15 @@ nnoremap <Leader>p viwp
 nnoremap <Leader>b( ea)<Esc>Bi(<Esc>i
 nnoremap <Leader>b) ea)<Esc>Bi(<Esc>i
 nnoremap <Leader>b[ ea]<Esc>Bi[<Esc>i
-nnoremap <Leader>b] ea)<Esc>Bi[<Esc>i
+nnoremap <Leader>b] ea]<Esc>Bi[<Esc>i
 
 " Quote stuff
 nnoremap <Leader>b" ea"<Esc>Bi"<Esc>
 nnoremap <Leader>b' ea'<Esc>Bi'<Esc>
+
+" Get quotes and type in them
+nnoremap <Leader>" i""<Space><Esc>hi
+nnoremap <Leader>' i''<Space><Esc>hi
 
 " Make backspace key work on Linux
 set backspace=2
@@ -187,3 +202,5 @@ autocmd BufRead,BufNewFile messages* set filetype=messages
 " ----------------------------
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+
