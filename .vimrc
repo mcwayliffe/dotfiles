@@ -102,6 +102,8 @@ nnoremap <C-h> <C-d>
 
 " Insert a single character at cursor
 nnoremap <Leader>i i_<Esc>r
+nnoremap <Leader>a a_<Esc>r
+
 
 " Insert single character at end of line
 nnoremap <Leader>$ $a_<Esc>r
