@@ -20,6 +20,8 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
 
   Plugin 'VundleVim/Vundle.vim'
 
+  Plugin 'scrooloose/NERDTree'
+
   " Solarized plugin
 "  Plugin 'altercation/vim-colors-solarized'
 "  syntax enable
@@ -67,6 +69,9 @@ let mapleader="\<Space>"
 
 " Toggle between relative and absolute numbering
 nnoremap <silent> <Leader>n :call ToggleNumbering()<CR>
+
+" Open the NERDTree
+nnoremap <silent> <Leader>o :NERDTreeToggle<CR>
 
 " Quicker saves
 nnoremap <silent> <Leader>w :w<CR>
