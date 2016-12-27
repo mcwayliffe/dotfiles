@@ -9,6 +9,10 @@
   pager = less -F -X
   editor = vim
 [alias]
+	ci = commit
+	co = checkout
+	br = branch
+	st = status
   l = log --pretty=format':[%ad] %h | %an: %s'
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 [color]
