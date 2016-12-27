@@ -14,4 +14,7 @@ export ZSH=$HOME/.oh-my-zsh
 source  $HOME/.zsh_profile
 
 source $ZSH/oh-my-zsh.sh
+# Fix the HEAD^ git bug
+unsetopt NO_MATCH
+
 
