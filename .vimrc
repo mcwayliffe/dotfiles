@@ -83,6 +83,12 @@ nnoremap <Leader>l gt
 " Quit
 nnoremap <silent> <Leader>q :q<CR>
 
+" Force quit
+nnoremap <silent> <Leader>Q :q!<CR>
+
+" Force reopen
+nnoremap <silent> <Leader>E :e!<CR>
+
 " More efficient line jumps
 nnoremap <CR> gg
 vnoremap <CR> gg
