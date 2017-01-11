@@ -22,6 +22,8 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
 
   Plugin 'scrooloose/NERDTree'
 
+  Plugin 'tpope/vim-fugitive'
+
   " Solarized plugin
 "  Plugin 'altercation/vim-colors-solarized'
 "  syntax enable
@@ -38,7 +40,7 @@ colorscheme desert
 " Why is this not a default?
 syntax on
 " Set reasonable tabbing behavior
-set expandtab tabstop=2 shiftwidth=2
+set expandtab tabstop=2 shiftwidth=2 shiftround
 " Turn on line numbers
 set number
 " Turn on positioning in bottom right
