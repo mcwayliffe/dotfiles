@@ -5,7 +5,7 @@
 	default = simple
 [core]
 	autocrlf = input
-	excludesfile = /Users/kc.wayman/.gitignore-global
+	excludesfile = ~/.gitignore-global
   pager = less -F -X
   editor = vim
 [alias]
