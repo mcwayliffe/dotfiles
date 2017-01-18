@@ -209,6 +209,9 @@ endfunction
 " Highlight gradle files correctly
 autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 
+" Wordwrap in markdown files
+autocmd BufRead,BufNewFile *.md set textwidth=80
+
 " Highlight messages files
 autocmd BufRead,BufNewFile messages* set filetype=messages
 
