@@ -17,6 +17,7 @@
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   div = merge-base @ upstream/master
   squash = !git rebase -i `git div`
+  ls-chg = !git diff --name-status @ `git div`
 [color]
 	ui = true
 [diff]
