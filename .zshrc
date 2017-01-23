@@ -17,4 +17,4 @@ source $ZSH/oh-my-zsh.sh
 # Fix the HEAD^ git bug
 unsetopt NO_MATCH
 
-
+alias x='xargs -I%'
