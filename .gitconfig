@@ -18,6 +18,7 @@
   div = merge-base @ upstream/master
   squash = !git rebase -i `git div`
   ls-chg = !git diff --name-status @ `git div`
+  untracked = ls-files --others --exclude-standard
 [color]
 	ui = true
 [diff]
