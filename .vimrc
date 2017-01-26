@@ -33,7 +33,7 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   call vundle#end()
 endif
 filetype plugin on
-colorscheme desert
+colorscheme default
 " ----------------------------
 " Settings
 " ----------------------------
