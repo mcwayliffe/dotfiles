@@ -13,12 +13,14 @@
 	co = checkout
 	br = branch
 	st = status --short
+  sp = show --patch
   l = log --pretty=format':[%ad] %h | %an: %s'
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   div = merge-base @ upstream/master
   squash = !git rebase -i `git div`
   ls-chg = !git diff --name-status `git div` @
   chg = !git diff `git div` @
+  pr = !git difftool `git div` @
   untracked = ls-files --others --exclude-standard
 [color]
 	ui = true

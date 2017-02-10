@@ -9,6 +9,7 @@ plugins=(git)
 
 export EDITOR='vim'
 export ZSH=$HOME/.oh-my-zsh
+export PATH=$PATH:$HOME/scripts
 
 # User configuration (machine-specific) goes in .zsh_profile
 source  $HOME/.zsh_profile

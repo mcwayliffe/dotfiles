@@ -33,7 +33,7 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   call vundle#end()
 endif
 filetype plugin on
-colorscheme default
+colorscheme desert
 " ----------------------------
 " Settings
 " ----------------------------
@@ -106,9 +106,6 @@ nnoremap <silent> <Leader>r :redraw!<CR>
 
 " Insert newline
 nnoremap <C-n> O<Esc>
-
-" Word deletion
-nnoremap w db
 
 " Scroll from the home row (except can't use <C-l>
 " because that's for tmux, so leave <C-u> as up
