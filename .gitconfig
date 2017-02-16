@@ -22,6 +22,7 @@
   chg = !git diff `git div` @
   pr = !git difftool `git div` @
   untracked = ls-files --others --exclude-standard
+  sync = fetch --all --prune
 [color]
 	ui = true
 [diff]

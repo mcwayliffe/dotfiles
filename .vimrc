@@ -78,6 +78,9 @@ nnoremap <silent> <Leader>o :NERDTreeToggle<CR>
 " Quicker saves
 nnoremap <silent> <Leader>w :w<CR>
 
+" Backwards deletion
+nnoremap <C-b> db
+
 " Switch tabs
 nnoremap <Leader>h gT
 nnoremap <Leader>l gt
@@ -106,6 +109,9 @@ nnoremap <silent> <Leader>r :redraw!<CR>
 
 " Insert newline
 nnoremap <C-n> O<Esc>
+
+" Back to last buffer
+nnoremap <silent> <Leader>b :buf #<CR>
 
 " Scroll from the home row (except can't use <C-l>
 " because that's for tmux, so leave <C-u> as up
