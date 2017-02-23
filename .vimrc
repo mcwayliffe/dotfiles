@@ -181,6 +181,7 @@ function! ToggleNumbering()
     set relativenumber
   endif
 endfunction
+
 function! CommentLine(line)
   let a:chars = split(a:line, '\zs')
   if(&ft == 'groovy' || &ft == 'java')
@@ -202,6 +203,10 @@ function! CommentLine(line)
       s/^/#/
     endif
   endif
+endfunction
+
+function! GetCurWord()
+  return expand("<cword">)
 endfunction
 
 function! PrependToLines() range
