@@ -174,6 +174,25 @@ vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
 " ----------------------------
 " Utility Functions
 " ----------------------------
+function! FixMarkdownNumbering()
+  let numbering_start = line('.')
+  let numbering_end   = line('.')
+  let numbering_pat   = '^[0-9]\+\.'
+  while match(getline(numbering_start), numbering_pat) != -1
+    let numbering_start = numbering_start - 1
+  endwhile
+  let numbering_start = numbering_start + 1
+
+  while match(getline(numbering_end), numbering_pat) != -1
+    let numbering_end = numbering_end + 1
+  endwhile
+  let numbering_end = numbering_end - 1
+
+  let awk_cmd = "awk -F'.' '{ $1=NR \".\" ; print $0 }'"
+  let range   = string(numbering_start) . "," . string(numbering_end)
+	execute range . "!" . awk_cmd
+endfunction
+
 function! ToggleNumbering()
   if(&relativenumber == 1)
     set norelativenumber
