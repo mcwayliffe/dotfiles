@@ -24,6 +24,8 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
 
   Plugin 'tpope/vim-fugitive'
 
+  Plugin 'mtth/scratch.vim'
+
   " Solarized plugin
 "  Plugin 'altercation/vim-colors-solarized'
 "  syntax enable
