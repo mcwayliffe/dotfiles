@@ -100,6 +100,9 @@ nnoremap <silent> <Leader>E :e!<CR>
 nnoremap <CR> gg
 vnoremap <CR> gg
 
+" Highlight everything
+nnoremap <C-A> ggVG
+
 " Remove search highlighting
 nnoremap <silent> <Leader>k :nohl<CR>
 
