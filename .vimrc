@@ -65,6 +65,9 @@ set splitbelow splitright
 " Simple smart indentation
 set autoindent
 
+" Show number of lines selected in Visual
+set showcmd
+
 " ----------------------------
 " Useful Key Mappings
 " ----------------------------
