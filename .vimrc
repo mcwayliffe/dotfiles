@@ -80,12 +80,18 @@ nnoremap <silent> <Leader>n :call ToggleNumbering()<CR>
 " Open the NERDTree
 nnoremap <silent> <Leader>o :NERDTreeToggle<CR>
 
+" Quicker saves
+nnoremap <silent> <Leader>w :w<CR>
+
 " Backwards deletion
 nnoremap <C-b> db
 
 " Switch tabs
 nnoremap <Leader>h gT
 nnoremap <Leader>l gt
+
+" Quit
+nnoremap <silent> <Leader>q :q<CR>
 
 " Force quit
 nnoremap <silent> <Leader>Q :q!<CR>
