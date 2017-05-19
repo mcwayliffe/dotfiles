@@ -130,7 +130,7 @@ nnoremap <C-h> <C-d>
 
 " Insert a single character at cursor
 nnoremap <Leader>i i_<Esc>r
-nnoremap <Leader>a a_<Esc>r
+"nnoremap <Leader>a a_<Esc>r
 
 
 " Insert single character at end of line
@@ -178,6 +178,12 @@ nnoremap <silent> <Leader>C :let @+=@+.getline('.')<CR>
 " Prepend to selection
 nnoremap <silent> <Leader>I :call PrependToLines()<CR>
 vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
+" ----------------------------
+" Align Things
+" ----------------------------
+command! -nargs=1 Align call ExtendCharTo(<f-args>, GetCharAtCursor())
+nnoremap <Leader>a dd"=:Align<space>P
+
 
 " ----------------------------
 " Utility Functions
@@ -239,6 +245,22 @@ endfunction
 function! PrependToLines() range
   let str = escape(input("Prepend: "), '\/.*$^~[]')
 	execute a:firstline . "," . a:lastline . 'substitute/^/' . str .'/'
+endfunction
+
+function! GetCharAtCursor()
+  return getline('.')[col('.')-1]
+endfunction
+
+function! ExtendCharTo(mark, char)
+  " Get index of mark in a line. Column numbering starts at 1 instead of 0,
+  " hence the subtraction
+  let myIdx = getpos('.')[2] - 1
+  let toIdx = getpos("'" . a:mark)[2]
+  let myLine = getline('.')
+  let leftSide = myLine[0:myIdx-1]
+  let rightSide = myLine[myIdx+1:-1]
+  let newLine = leftSide . repeat(a:char, toIdx - myIdx - 1) . rightSide
+  return newLine
 endfunction
 " ----------------------------
 " Filetypes
