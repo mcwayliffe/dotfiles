@@ -211,20 +211,27 @@ endfunction
 
 function! CommentLine(line)
   let a:chars = split(a:line, '\zs')
+  let length = len(a:chars)
   if(&ft == 'groovy' || &ft == 'java')
-    if(a:chars[0] ==? "\/" && a:chars[1] ==? "\/")
+    if(length == 0)
+      s/^/\/\//
+    elseif(a:chars[0] ==? "\/" && a:chars[1] ==? "\/")
       s/\/\///
     else
       s/^/\/\//
     endif
   elseif(&ft == 'vim')
-    if(a:chars[0] ==? "\"")
+    if(length == 0)
+      s/^/"/
+    elseif(a:chars[0] ==? "\"")
       s/"//
     else
       s/^/"/
     endif
   else
-    if(a:chars[0] ==? "#")
+    if(length == 0)
+      s/^/#/
+    elseif(a:chars[0] ==? "#")
       s/\#//
     else
       s/^/#/
