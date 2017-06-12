@@ -74,12 +74,6 @@ set showcmd
 
 let mapleader="\<Space>"
 
-" Word deletion so I don't have to count words anymore
-" XXX Make this smart enough to not need to be at the beginning of the word to
-" work correctly
-nnoremap <C-D> dw
-inoremap <C-D> dw
-
 " Toggle between relative and absolute numbering
 nnoremap <silent> <Leader>n :call ToggleNumbering()<CR>
 
