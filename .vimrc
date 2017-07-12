@@ -257,6 +257,9 @@ autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 " Wordwrap in markdown files
 autocmd BufRead,BufNewFile *.md set textwidth=80
 
+" Wordwrap in Python
+autocmd BufRead,BufNewFile *.py set textwidth=120
+
 " Highlight messages files
 autocmd BufRead,BufNewFile messages* set filetype=messages
 
