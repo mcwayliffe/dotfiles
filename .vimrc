@@ -75,7 +75,7 @@ set showcmd
 let mapleader="\<Space>"
 
 " Toggle between relative and absolute numbering
-nnoremap <silent> <Leader>n :call ToggleNumbering()<CR>
+nnoremap <silent> <Leader>n :set relativenumber!<CR>
 
 " Open the NERDTree
 nnoremap <silent> <Leader>o :NERDTreeToggle<CR>
@@ -199,14 +199,6 @@ function! FixMarkdownNumbering()
   let awk_cmd = "awk -F'.' '{ $1=NR \".\" ; print $0 }'"
   let range   = string(numbering_start) . "," . string(numbering_end)
 	execute range . "!" . awk_cmd
-endfunction
-
-function! ToggleNumbering()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
 endfunction
 
 function! CommentLine(line)
