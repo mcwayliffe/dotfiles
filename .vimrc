@@ -249,6 +249,8 @@ autocmd BufRead,BufNewFile *.py set textwidth=120
 " Highlight messages files
 autocmd BufRead,BufNewFile messages* set filetype=messages
 
+" Git commits + textwrapping
+autocmd Filetype gitcommit setlocal textwidth=80 spell
 
 " ----------------------------
 " Helpers
