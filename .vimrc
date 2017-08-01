@@ -35,6 +35,8 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   call vundle#end()
 endif
 filetype plugin on
+" Colorscheme
+set t_Co=256
 colorscheme desert
 " ----------------------------
 " Settings
