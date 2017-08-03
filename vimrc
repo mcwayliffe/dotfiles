@@ -170,9 +170,6 @@ nnoremap <silent> <Leader>C :let @+=@+.getline('.')<CR>
 nnoremap <silent> <Leader>I :call PrependToLines()<CR>
 vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
 
-" CapsLock after the fact
-inoremap II <Esc>gUawEa
-
 " ----------------------------
 " Utility Functions
 " ----------------------------
