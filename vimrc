@@ -124,11 +124,6 @@ nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 nnoremap <C-h> <C-d>
 
-" Insert a single character at cursor
-nnoremap <Leader>i i_<Esc>r
-nnoremap <Leader>a a_<Esc>r
-
-
 " Insert single character at end of line
 nnoremap <Leader>$ $a_<Esc>r
 
@@ -174,6 +169,9 @@ nnoremap <silent> <Leader>C :let @+=@+.getline('.')<CR>
 " Prepend to selection
 nnoremap <silent> <Leader>I :call PrependToLines()<CR>
 vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
+
+" CapsLock after the fact
+inoremap II <Esc>gUawEa
 
 " ----------------------------
 " Utility Functions
