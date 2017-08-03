@@ -3,9 +3,6 @@
 " ----------------------------
 set runtimepath+=./vim-scripts
 
-" brackets.vim has the code to auto-bracket things
-runtime brackets.vim
-
 " ----------------------------
 " PLUGINS
 " ----------------------------
@@ -14,30 +11,22 @@ runtime brackets.vim
 set nocompatible
 if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   filetype off
+  set runtimepath+=~/.vim/bundle/Vundle.vim
 
-  set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
-
   Plugin 'VundleVim/Vundle.vim'
-
   Plugin 'scrooloose/NERDTree'
-
   Plugin 'tpope/vim-fugitive'
-
   Plugin 'mtth/scratch.vim'
-
-  " Solarized plugin
-"  Plugin 'altercation/vim-colors-solarized'
-"  syntax enable
-"  set background=dark
-"  colorscheme solarized
-
   call vundle#end()
 endif
+
 filetype plugin on
-" Colorscheme
+
+" Colors
 set t_Co=256
 colorscheme desert
+
 " ----------------------------
 " Settings
 " ----------------------------
@@ -85,9 +74,6 @@ nnoremap <silent> <Leader>o :NERDTreeToggle<CR>
 " Quicker saves
 nnoremap <silent> <Leader>w :w<CR>
 
-" Backwards deletion
-nnoremap <C-b> db
-
 " Switch tabs
 nnoremap <Leader>h gT
 nnoremap <Leader>l gt
@@ -108,9 +94,6 @@ vnoremap <CR> gg
 " Remove search highlighting
 nnoremap <silent> <Leader>k :nohl<CR>
 
-" Right-handed window switching
-nnoremap <Leader>j <C-w><C-w>
-
 " Force screen redraw
 nnoremap <silent> <Leader>r :redraw!<CR>
 
@@ -124,25 +107,8 @@ nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 nnoremap <C-h> <C-d>
 
-" Insert single character at end of line
-nnoremap <Leader>$ $a_<Esc>r
-
 " Replace word with yank-register contents
 nnoremap <Leader>p viwp
-
-" Bracket word
-nnoremap <Leader>b( ea)<Esc>Bi(<Esc>i
-nnoremap <Leader>b) ea)<Esc>Bi(<Esc>i
-nnoremap <Leader>b[ ea]<Esc>Bi[<Esc>i
-nnoremap <Leader>b] ea]<Esc>Bi[<Esc>i
-
-" Quote stuff
-nnoremap <Leader>b" ea"<Esc>Bi"<Esc>
-nnoremap <Leader>b' ea'<Esc>Bi'<Esc>
-
-" Get quotes and type in them
-nnoremap <Leader>" i""<Space><Esc>hi
-nnoremap <Leader>' i''<Space><Esc>hi
 
 " Make backspace key work on Linux
 set backspace=2
@@ -165,10 +131,6 @@ vnoremap <Leader>v "+p
 
 " Append a line to the clipboard
 nnoremap <silent> <Leader>C :let @+=@+.getline('.')<CR>
-
-" Prepend to selection
-nnoremap <silent> <Leader>I :call PrependToLines()<CR>
-vnoremap <silent> <Leader>I :'<,'>call PrependToLines()<CR>
 
 " ----------------------------
 " Utility Functions
@@ -254,5 +216,3 @@ autocmd Filetype gitcommit setlocal textwidth=80 spell
 " ----------------------------
 " Strip trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-
