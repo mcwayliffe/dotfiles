@@ -1,0 +1,13 @@
+bindkey -e # Use emacs keymap -- this is standard everywhere
+
+setopt AUTO_CD # This lets you cd into a directory by just typing its name
+setopt AUTO_PUSHD # Put every cd on the pushd stack
+
+unsetopt CLOBBER # Use >| to overwrite a file with output redirection
+
+# Prompt customization
+export PS1='%F{green}%D%f%F{red}|%f%F{blue}%1~%f %# '
+
+
+
+alias ls='ls --color=auto'
