@@ -1,4 +1,4 @@
-bindkey -v # Use vim keymap
+bindkey -e # Use emacs keymap -- this is standard everywhere
 
 setopt AUTO_CD # This lets you cd into a directory by just typing its name
 setopt AUTO_PUSHD # Put every cd on the pushd stack
@@ -10,4 +10,4 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 ls --color -d . &> /dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
 
 # Prompt customization
-export PS1='%F{green}%D%f%F{red}|%f%F{blue}%1~%f %# '
+export PS1='%F{green}%1~%f %# '
