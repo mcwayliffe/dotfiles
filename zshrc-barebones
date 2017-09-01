@@ -43,7 +43,7 @@ export PS1='%F{green}%~%f%F{red}|%f%F{blue}$(git_branch)%f %# '
 # Source external configs
 source ~/.zsh/*  &>/dev/null
 
-# '^[/]' is how you search in 'vi' mode, but by default it executes the
+# '^[/' is how you search in 'vi' mode, but by default it executes the
 # _history-complete-older function, which I don't use for anything. So I unbind
 # it
 bindkey -r '^[/'
