@@ -38,7 +38,7 @@ function git_branch() {
 # This is how we make it actually call the git_branch function when
 # evaluating the prompt
 setopt PROMPT_SUBST
-export PS1='%F{green}%1~%f%F{red}|%f%F{blue}$(git_branch)%f %# '
+export PS1='%F{green}%~%f%F{red}|%f%F{blue}$(git_branch)%f %# '
 
 # Source external configs
 source ~/.zsh/*  &>/dev/null
