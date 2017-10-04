@@ -1,4 +1,8 @@
 bindkey -v # Use vim keymap
+# For some reason, vi-backward-delete-char doesn't allow you to use the
+# backspace key to delete anything prior to where you begin inserting,
+# so we rebind backspace to the standard backward-delete-char
+bindkey -v '^?' backward-delete-char
 
 setopt AUTO_CD # This lets you cd into a directory by just typing its name
 setopt AUTO_PUSHD # Put every cd on the pushd stack
