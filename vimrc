@@ -1,7 +1,12 @@
 " ----------------------------
 " Other source files
 " ----------------------------
-set runtimepath+=./vim-scripts
+
+" Configure runtimepath to include files from the dotfiles repo. This assumes
+" that ~/.vimrc is symlinked to <some-path>/dotfiles/vimrc and not copied
+" there. But, like, who would do that?
+let basedir = fnamemodify(resolve(expand('%:p')), ':p:h')
+execute 'set rtp+=' . basedir
 
 " ----------------------------
 " PLUGINS
@@ -22,6 +27,13 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
 endif
 
 filetype plugin on
+
+" Insert-Mode-Only CAPSLOCK
+" To use this, type CTRL-^ (C-S-6) in either insert or search
+set imsearch=-1
+set keymap=caps " This lives in dotfiles/keymap/caps.vim
+set iminsert=0
+autocmd InsertLeave * set iminsert=0
 
 " Colors
 set t_Co=256
