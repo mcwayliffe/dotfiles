@@ -47,3 +47,8 @@ source ~/.zsh/*  &>/dev/null
 # _history-complete-older function, which I don't use for anything. So I unbind
 # it
 bindkey -r '^[/'
+
+# Initialize pyenv, if we have it
+if (( $+commands[pyenv] )); then
+  eval "$(pyenv init -)"
+fi
