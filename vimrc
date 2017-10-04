@@ -5,7 +5,7 @@
 " Configure runtimepath to include files from the dotfiles repo. This assumes
 " that ~/.vimrc is symlinked to <some-path>/dotfiles/vimrc and not copied
 " there. But, like, who would do that?
-let basedir = fnamemodify(resolve(expand('%:p')), ':p:h')
+let basedir = fnamemodify(resolve(expand('<sfile>:p')), ':p:h')
 execute 'set rtp+=' . basedir
 
 " ----------------------------
