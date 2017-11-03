@@ -54,6 +54,9 @@ set ruler
 set hlsearch
 " Make vi search behave like EMACS's I-Search
 set incsearch
+" Show tabs explicitly
+set list
+set listchars=tab:>-
 
 " Logical, case-insensitive searching
 set ignorecase
