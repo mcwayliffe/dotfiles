@@ -1,3 +1,6 @@
+local zsh_dir=$HOME/.zsh
+
+# Key Bindings
 bindkey -v # Use vim keymap
 # For some reason, vi-backward-delete-char doesn't allow you to use the
 # backspace key to delete anything prior to where you begin inserting,
@@ -14,10 +17,10 @@ unsetopt CLOBBER # Use >| to overwrite a file with output redirection
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 ls --color -d . &> /dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
 
+# External tool completions
 # ---
-# Git Completion
+# Git
 # ---
-local zsh_dir=$HOME/.zsh
 local git_comp_url="https://raw.githubusercontent.com/git/git/master/contrib/completion"
 if [[ ! -d $zsh_dir ]]; then
   command mkdir $zsh_dir
@@ -28,6 +31,18 @@ for ext in zsh bash; do
         --output $zsh_dir/git-completion.$ext
   fi
 done
+
+# ---
+# AWS CLI
+# ---
+local aws_cmp_src=/usr/local/bin/aws_zsh_completer.sh
+local aws_cmp_dst=$zsh_dir/aws_zsh_completer.sh
+if [[ -f $aws_cmp_src && ! -f $aws_cmp_dst ]]; then
+  echo ¨doing¨
+  command ln -s $aws_cmp_src $aws_cmp_dst
+else
+  echo ¨not doing¨
+fi
 
 # ---
 # Prompt customization
