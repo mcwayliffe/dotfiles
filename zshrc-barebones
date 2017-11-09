@@ -15,19 +15,30 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 ls --color -d . &> /dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
 
 # ---
-# Git Completion
+# Initial .zsh dir setup
 # ---
 local zsh_dir=$HOME/.zsh
-local git_comp_url="https://raw.githubusercontent.com/git/git/master/contrib/completion"
 if [[ ! -d $zsh_dir ]]; then
   command mkdir $zsh_dir
 fi
+fpath=(~/.zsh $fpath)
+
+# ---
+# Git Completion
+# ---
+# Download git completions from github
+local git_comp_url="https://raw.githubusercontent.com/git/git/master/contrib/completion"
 for ext in zsh bash; do
   if [[ ! -f $zsh_dir/git-completion.$ext ]]; then
     command curl --silent "$git_comp_url/git-completion.$ext" \
         --output $zsh_dir/git-completion.$ext
   fi
 done
+# Install zsh completions
+source $zsh_dir/git-completion.bash &>/dev/null
+if [[ ! -L $zsh_dir/_git ]]; then
+  command ln -s $zsh_dir/git-completion.zsh $zsh_dir/_git
+fi
 
 # ---
 # Prompt customization
@@ -43,9 +54,6 @@ function git_branch() {
 # evaluating the prompt
 setopt PROMPT_SUBST
 export PS1='%F{green}%~%f%F{red}|%f%F{blue}$(git_branch)%f %# '
-
-# Source external configs
-source ~/.zsh/*  &>/dev/null
 
 # '^[/' is how you search in 'vi' mode, but by default it executes the
 # _history-complete-older function, which I don't use for anything. So I unbind
