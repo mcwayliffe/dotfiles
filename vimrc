@@ -207,6 +207,16 @@ function! PrependToLines() range
   let str = escape(input("Prepend: "), '\/.*$^~[]')
 	execute a:firstline . "," . a:lastline . 'substitute/^/' . str .'/'
 endfunction
+
+function! SaveSession()
+  " Save a .vim with the current session so we don't
+  " lose it
+  let session_dir = $HOME . "/.vim/sessions/"
+  let ts = strftime("%Y-%m-%d-%H-%M")
+  if ! isdirectory(session_dir)
+    mkdir(session_dir)
+  endif
+endfunction
 " ----------------------------
 " Filetypes
 " ----------------------------
