@@ -138,15 +138,6 @@ noremap <Right> <C-d>
 nnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
 vnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
 
-" Convenient way to copy to and paste from the clipboard register
-nnoremap <Leader>c "+
-vnoremap <Leader>c "+
-nnoremap <Leader>v "+p
-vnoremap <Leader>v "+p
-
-" Append a line to the clipboard
-nnoremap <silent> <Leader>C :let @+=@+.getline('.')<CR>
-
 " ----------------------------
 " Utility Functions
 " ----------------------------
