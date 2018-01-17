@@ -15,6 +15,30 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 ls --color -d . &> /dev/null && alias ls='ls --color=tty' || alias ls='ls -G'
 
 # ---
+# History setup
+# ---
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTFILE=$HOME/.history
+
+# Don't overwrite history when starting a new session
+setopt APPEND_HISTORY
+# Write history incrementally, instead of on session end
+setopt INC_APPEND_HISTORY
+# Share history across sessions
+setopt SHARE_HISTORY
+# Don't keep duplicate commands around unnecessarily
+setopt HIST_EXPIRE_DUPS_FIRST
+# Don't find duplicate commands in history
+setopt HIST_FIND_NO_DUPS
+# Compact commands that have newlines in them
+setopt HIST_REDUCE_BLANKS
+# Don't put `history | grep` in my history
+setopt HIST_NO_STORE
+# No unnecessary information
+unsetopt EXTENDED_HISTORY
+
+# ---
 # Initial .zsh dir setup
 # ---
 local zsh_dir=$HOME/.zsh
