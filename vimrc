@@ -209,7 +209,10 @@ autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 autocmd BufRead,BufNewFile *.md set textwidth=80
 
 " Wordwrap in Python
-autocmd BufRead,BufNewFile *.py set textwidth=120
+autocmd BufRead,BufNewFile *.py setl textwidth=120
+
+" Formatting using tabs for golang
+autocmd BufRead,BufNewFile *.go setl nolist noet ts=8 sw=4 sts=4
 
 " Highlight messages files
 autocmd BufRead,BufNewFile messages* set filetype=messages
