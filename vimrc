@@ -157,7 +157,7 @@ function! FixMarkdownNumbering()
 
   let awk_cmd = "awk -F'.' '{ $1=NR \".\" ; print $0 }'"
   let range   = string(numbering_start) . "," . string(numbering_end)
-	execute range . "!" . awk_cmd
+  execute range . "!" . awk_cmd
 endfunction
 
 function! CommentLine(line)
@@ -196,7 +196,7 @@ endfunction
 
 function! PrependToLines() range
   let str = escape(input("Prepend: "), '\/.*$^~[]')
-	execute a:firstline . "," . a:lastline . 'substitute/^/' . str .'/'
+  execute a:firstline . "," . a:lastline . 'substitute/^/' . str .'/'
 endfunction
 " ----------------------------
 " Filetypes
