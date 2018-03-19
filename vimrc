@@ -206,7 +206,7 @@ endfunction
 autocmd BufRead,BufNewFile *.gradle set filetype=groovy
 
 " Wordwrap in markdown files
-autocmd BufRead,BufNewFile *.md set textwidth=80
+autocmd BufRead,BufNewFile *.md setl textwidth=0
 
 " Wordwrap in Python
 autocmd BufRead,BufNewFile *.py setl textwidth=120
