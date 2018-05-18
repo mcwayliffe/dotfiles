@@ -212,7 +212,7 @@ autocmd BufRead,BufNewFile *.md setl textwidth=0
 autocmd BufRead,BufNewFile *.py setl textwidth=120
 
 " Formatting using tabs for golang
-autocmd BufRead,BufNewFile *.go setl nolist noet ts=8 sw=4 sts=4
+autocmd BufRead,BufNewFile *.go setl nolist noet ts=4 sw=4 sts=4
 
 " Highlight messages files
 autocmd BufRead,BufNewFile messages* set filetype=messages
