@@ -77,7 +77,7 @@ function git_branch() {
 # This is how we make it actually call the git_branch function when
 # evaluating the prompt
 setopt PROMPT_SUBST
-export PS1='%F{green}%~%f%F{red}|%f%F{blue}$(git_branch)%f %# '
+export PS1=$'%F{green}%~%f%F{red}|%f%F{blue}$(git_branch)%f %#\n'
 
 # '^[/' is how you search in 'vi' mode, but by default it executes the
 # _history-complete-older function, which I don't use for anything. So I unbind
