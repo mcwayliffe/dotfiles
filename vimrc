@@ -163,7 +163,7 @@ endfunction
 function! CommentLine(line)
   let a:chars = split(a:line, '\zs')
   let length = len(a:chars)
-  if(&ft == 'groovy' || &ft == 'java')
+  if(&ft == 'groovy' || &ft == 'java' || &ft == 'go')
     if(length == 0)
       s/^/\/\//
     elseif(a:chars[0] ==? "\/" && a:chars[1] ==? "\/")
