@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-whereami="$( cd "$(dirname ${BASH_SOURCE[0]})" >/dev/null && pwd )"
-# Install ansible (with apt instead of pip)
-apt-add-repository ppa:ansible/ansible \
-  && apt-get update \
-  && apt-get -y install software-properties-common ansible \
+set -eo pipefail
 
-# Install and configure everything else
-ansible-playbook --inventory-file inventory $whereami/workstation.yml
+# Get to the point where we can install other ppas
+apt-get update && apt-get -y install software-properties-common
+
+apt-add-repository ppa:ansible/ansible ppa:jonathonf/vim
+
+apt-get update && apt-get -y install ansible vim

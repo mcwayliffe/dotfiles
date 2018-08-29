@@ -1,9 +1,0 @@
-# Get the latest vim
-- name: install vim ppa
-  apt_repository:
-    name: ppa:jonathonf/vim
-- name: install vim
-  apt:
-    name: vim
-    state: latest
-    update: yes

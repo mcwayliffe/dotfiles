@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  become: yes
-  tasks:
-  - include_tasks: tasks/{{ task }}
-    with_items:
-    - core-packages.yml
-    loop_control:
-      loop_var: task
