@@ -51,6 +51,10 @@ export PS1=$'\e[0;32m\w\e[m\e[0;31m|\e[m\e[0;34m$(git_branch)\e[m \$\n'
 
 # --- Colored output for ls ---
 if command -v dircolors &>/dev/null; then
+  # If on linux, use dircolors
   eval $(dircolors -b)
   alias ls='ls --color=auto'
+elif [[ "$(command uname)" == "Darwin" ]]; then
+  # On Mac, just use BSD default colors
+  alias ls='ls -G'
 fi
