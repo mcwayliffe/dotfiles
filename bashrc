@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# --- Important Environment Variables
+export VISUAL=vim
+export EDITOR=vim
+
 # --- History Options ---
 # No duplicate lines or lines starting with space
 HISTCONTROL=ignoreboth:erasedups
