@@ -26,13 +26,24 @@ shopt -s checkwinsize
 # **/ matches directories and subdirectories
 shopt -s globstar
 
-# --- Turn on completion ---
+# --- Turn on completion: Linux ---
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# --- Git completion: Mac ---
+git_root=/usr/local/Cellar/git
+if [ -d  $git_root ]; then
+  cd $git_root
+  latest_git_dir="$(find . ! -path . -maxdepth 1 -type d -exec basename {} \; \
+    | sort -n | head -1)"
+  completions_file="$(find $latest_git_dir -name 'git-completion.bash'  | head -1)"
+  source $completions_file
+  cd -
 fi
 
 # --- Prompt Config ---
