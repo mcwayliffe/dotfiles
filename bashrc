@@ -46,6 +46,11 @@ if [ -d  $git_root ]; then
   cd -
 fi
 
+# --- kubectl completion ---
+if command -v kubectl &>/dev/null; then
+  source <(command kubectl completion bash)
+fi
+
 # --- Prompt Config ---
 function git_branch() {
   local ref
