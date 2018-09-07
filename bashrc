@@ -58,3 +58,8 @@ elif [[ "$(command uname)" == "Darwin" ]]; then
   # On Mac, just use BSD default colors
   alias ls='ls -G'
 fi
+
+# --- Initialize pyenv ---
+if command -v pyenv &>/dev/null; then
+  eval "$(pyenv init -)"
+fi
