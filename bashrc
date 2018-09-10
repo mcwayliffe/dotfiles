@@ -1,3 +1,6 @@
+# In Mac's Terminal.app, all shells are login shells, so you must source this
+# file from $HOME/.bash_profile.
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
