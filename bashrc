@@ -8,16 +8,34 @@
 export VISUAL=vim
 export EDITOR=vim
 
-# --- History Options ---
+# --- History Configuration ---
 # No duplicate lines or lines starting with space
 HISTCONTROL=ignoreboth:erasedups
 
 # Default history is 500, which is a bit small
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=$HISTSIZE
 
 # Append to the history file, don't overwrite it
 shopt -s histappend
+
+# --- Share History Across All Running Sessions ---
+# Adapted from https://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
+# Basically, this makes the session-local "history list" a non-entity, using the history file
+# as the source of truth.
+
+sync_history() {
+  # Append this session's history list to the history file
+  builtin history -a
+  # Truncate the file if necessary
+  HISTFILESIZE=$HISTSIZE
+  # Clear out this session's history list
+  builtin history -c
+  # Reload the contents of the history file
+  builtin history -r
+}
+
+export PROMPT_COMMAND="sync_history; $PROMPT_COMMAND"
 
 # --- General Shell Options ---
 # Use vi editing mode
