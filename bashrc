@@ -47,12 +47,16 @@ shopt -s checkwinsize
 # **/ matches directories and subdirectories
 shopt -s globstar
 
-# --- Turn on completion: Linux ---
+# --- Turn on completion ---
 if ! shopt -oq posix; then
+  # Linux completion locations
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+  # Mac completion location
+  elif [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
   fi
 fi
 
