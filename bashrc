@@ -47,6 +47,9 @@ shopt -s checkwinsize
 # **/ matches directories and subdirectories
 shopt -s globstar
 
+# Expand $PWD in commands
+shopt -s direxpand
+
 # --- Turn on completion ---
 if ! shopt -oq posix; then
   # Linux completion locations
