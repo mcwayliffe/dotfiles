@@ -16,7 +16,7 @@
   sp = show --patch
   l = log --pretty=format':[%ad] %h | %an: %s'
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-  div = merge-base @ upstream/master
+  div = merge-base @ origin/master
   since = !git log --oneline --reverse `git div`..@
   squish = !git rebase -i `git div` --autosquash
   ls-chg = !git diff --name-status `git div` @
