@@ -1,21 +1,21 @@
 [user]
-	name = KC Wayman
-	email = kc.wayman@appian.com
+  name = KC Wayman
+  email = kc.wayman@appian.com
 [push]
-	default = simple
+  default = simple
 [core]
-	autocrlf = input
-	excludesfile = ~/.gitignore-global
+  autocrlf = input
+  excludesfile = ~/.gitignore-global
   pager = less -F -X
   editor = vim
 [alias]
-	ci = commit
-	co = checkout
-	br = branch
-	st = status --short
+  ci = commit
+  co = checkout
+  br = branch
+  st = status --short
   sp = show --patch
   l = log --pretty=format':[%ad] %h | %an: %s'
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   div = merge-base @ upstream/master
   since = !git log --oneline --reverse `git div`..@
   squish = !git rebase -i `git div` --autosquash
@@ -25,10 +25,10 @@
   untracked = ls-files --others --exclude-standard
   sync = fetch --all --prune
 [color]
-	ui = true
+  ui = true
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [rerere]
-	enabled = 1
+  enabled = 1
