@@ -67,7 +67,7 @@ fi
 git_root=/usr/local/Cellar/git
 if [ -d  $git_root ]; then
   cd $git_root
-  latest_git_dir="$(find . ! -path . -maxdepth 1 -type d -exec basename {} \; \
+  latest_git_dir="$(find . -maxdepth 1 ! -path . -type d -exec basename {} \; \
     | sort -n | head -1)"
   completions_file="$(find $latest_git_dir -name 'git-completion.bash'  | head -1)"
   source $completions_file
