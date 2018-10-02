@@ -22,6 +22,7 @@ if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'scrooloose/NERDTree'
   Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-surround'
   Plugin 'mtth/scratch.vim'
   call vundle#end()
 endif
