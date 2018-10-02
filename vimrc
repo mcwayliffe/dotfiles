@@ -103,10 +103,6 @@ nnoremap <silent> <Leader>Q :q!<CR>
 " Force reopen
 nnoremap <silent> <Leader>E :e!<CR>
 
-" More efficient line jumps
-nnoremap <CR> gg
-vnoremap <CR> gg
-
 " Remove search highlighting
 nnoremap <silent> <Leader>k :nohl<CR>
 
