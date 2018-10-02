@@ -65,13 +65,8 @@ fi
 
 # --- Git completion: Mac ---
 git_root=/usr/local/Cellar/git
-if [ -d  $git_root ]; then
-  cd $git_root
-  latest_git_dir="$(find . -maxdepth 1 ! -path . -type d -exec basename {} \; \
-    | sort -n | head -1)"
-  completions_file="$(find $latest_git_dir -name 'git-completion.bash'  | head -1)"
-  source $completions_file
-  cd -
+if [[ -d  $git_root ]]; then
+  . "$(find $git_root -name 'git-completion.bash' | sort -n | head -n1)"
 fi
 
 # --- kubectl completion ---
