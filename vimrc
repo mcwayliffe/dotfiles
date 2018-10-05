@@ -76,6 +76,11 @@ set autoindent
 set showcmd
 
 " ----------------------------
+" Grep configuration (also quickfix)
+" ----------------------------
+set grepprg=git\ grep\ -n
+
+" ----------------------------
 " Useful Key Mappings
 " ----------------------------
 
@@ -118,9 +123,6 @@ nnoremap <C-n> O<Esc>
 nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 nnoremap <C-h> <C-d>
-
-" Replace word with yank-register contents
-nnoremap <Leader>p viwp
 
 " Make backspace key work on Linux
 set backspace=2
