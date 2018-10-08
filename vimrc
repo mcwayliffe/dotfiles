@@ -51,8 +51,6 @@ set expandtab tabstop=2 shiftwidth=2 shiftround
 set number
 " Turn on positioning in bottom right
 set ruler
-" Turn on search highlighting
-set hlsearch
 " Make vi search behave like EMACS's I-Search
 set incsearch
 " Show tabs explicitly
