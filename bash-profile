@@ -1,0 +1,16 @@
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$PATH"
+
+if [ -f $HOME/.bash_profile_local ]; then
+  . $HOME/.bash_profile_local
+fi
+
+if [ -f $HOME/.bashrc ]; then
+  . $HOME/.bashrc
+fi
+
+if [ -d $HOME/.bash_plugins ]; then
+  for plugin in $(find $HOME/.bash_plugins -type f -o -type l); do
+    . $plugin
+  done
+fi
