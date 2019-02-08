@@ -43,6 +43,8 @@ colorscheme desert
 " ----------------------------
 " Settings
 " ----------------------------
+" Turn on 'bash' -- who uses 'sh' any more?
+let g:is_bash=1
 " Why is this not a default?
 syntax on
 " Set reasonable tabbing behavior
@@ -69,6 +71,7 @@ set splitbelow splitright
 
 " Simple smart indentation
 set autoindent
+
 
 " Show number of lines selected in Visual
 set showcmd
