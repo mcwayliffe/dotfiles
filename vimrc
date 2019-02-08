@@ -11,21 +11,21 @@ execute 'set rtp+=' . basedir
 " ----------------------------
 " PLUGINS
 " ----------------------------
-"  Plugins are managed by Vundle -- if Vundle isn't installed, then
-"  don't bother with setting it up
 set nocompatible
-if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
-  filetype off
-  set runtimepath+=~/.vim/bundle/Vundle.vim
-
-  call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'scrooloose/NERDTree'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-surround'
-  Plugin 'mtth/scratch.vim'
-  call vundle#end()
-endif
+" if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
+"   "  Plugins are managed by Vundle -- if Vundle isn't installed, then
+"   "  don't bother with setting it up
+"   filetype off
+"   set runtimepath+=~/.vim/bundle/Vundle.vim
+"
+"   call vundle#begin()
+"   Plugin 'VundleVim/Vundle.vim'
+"   Plugin 'scrooloose/NERDTree'
+"   Plugin 'tpope/vim-fugitive'
+"   Plugin 'tpope/vim-surround'
+"   Plugin 'mtth/scratch.vim'
+"   call vundle#end()
+" endif
 
 filetype plugin on
 
