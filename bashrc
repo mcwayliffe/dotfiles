@@ -38,9 +38,6 @@ sync_history() {
 export PROMPT_COMMAND="sync_history; $PROMPT_COMMAND"
 
 # --- General Shell Options ---
-# Use vi editing mode
-set -o vi
-
 # Update display after each command
 shopt -s checkwinsize
 

@@ -1,6 +1,17 @@
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$PATH"
+# --- Homebrew-specific things ---
+# Use brew-installed packages instead of defaults
+BREW_OPT="/usr/local/opt"
+BREW_GNU="libexec/gnubin"
 
+BREW_DEFAULTS="/usr/local/bin:/usr/local/sbin"
+BREW_GNU_TOOLS="$BREW_OPT/coreutils/$BREW_GNU:$BREW_OPT/findutils/$BREW_GNU:$BREW_OPT/gnu-sed/$BREW_GNU"
+BREW_RUBY="$BREW_OPT/ruby/bin:/usr/local/lib/ruby/gems/2.5.0/bin"
+
+export PATH="$BREW_DEFAULTS:$BREW_GNU_TOOLS:$BREW_RUBY:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+alias vim="/usr/local/bin/vim"
+
+# --- General bash stuff ---
 if [ -f $HOME/.bash_profile_local ]; then
   . $HOME/.bash_profile_local
 fi
