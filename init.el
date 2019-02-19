@@ -27,7 +27,7 @@
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(custom-enabled-themes (quote (deeper-blue)))
- '(package-selected-packages (quote (markdown-mode))))
+ '(package-selected-packages (quote (go-mode markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
