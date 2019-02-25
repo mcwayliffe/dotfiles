@@ -6,16 +6,19 @@
 
 ;; BASIC CUSTOMIZATIONS
 ;; ===
-;; This variable allows me to jump by sentence in plaintext
-;; files where I only use one space to separate sentences
-(setq sentence-end-double-space nil)
-
-;; This variable adds the behavior that C-n at the end
-;; of a buffer goes ahead and inserts newlines for you
-(setq next-line-add-newlines t)
+(setq
+ ;; Allow jumping by sentence in plaintext files where only one space separates
+ ;; sentences
+ sentence-end-double-space nil
+ ;; C-n at the end of a buffer inserts newlines
+ next-line-add-newlines t)
 
 ;; Remove trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Wrap lines in text files
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(setq-default fill-column 80)
 
 ;; END BASIC CUSTOMIZATIONS
 
@@ -39,17 +42,49 @@
 ;; This size font is much more legible on a modern display
 (set-face-attribute 'default nil :height 180)
 
-;; Here, I am attempting to replicate the functionality I had in Vi
-;; via `nnoremap <C-n> O<Esc>`.
+;; Ports of useful text manipulation commands from Vi
+
+;; <n> O
 (defun push-newline()
- ;; The push-newline function inserts a newline above the line
- ;; where the point is currently located.
  (interactive)
  (beginning-of-line nil)
- (insert-char ?\n)
- (backward-char nil))
+ (open-line 1))
+
+;; Without: C-a C-o
+(global-set-key (kbd "C-j") 'push-newline)
+
+;; <n> o -- by default, you have to C-e <RET>
+(defun open-newline()
+  (interactive)
+  (end-of-line nil)
+  (electric-newline-and-maybe-indent))
+
+;;Without: C-e C-j
+(global-set-key (kbd "C-o") 'open-newline)
+
+;; <n> dd
+(defun kill-whole-line()
+  (interactive)
+  (beginning-of-line nil)
+  (kill-line 1))
+
+;; Without: C-a C-k C-k
+(global-set-key (kbd "s-k") 'kill-whole-line)
+
+;; <n> J
+(defun join-next-line()
+  (interactive)
+  (save-excursion
+    (end-of-line nil)
+    (forward-char 1)
+    (join-line nil)))
+
+;; Without: C-n M-^
+(global-set-key (kbd "C-S-j") 'join-next-line)
+
+
 ;; By default, typing C-j inserts a newline and follows it, but
 ;; I happen to like having the cursor stay where it is because
 ;; <RET> is perfectly adequate for doing what C-j does.
-(substitute-key-definition
- 'electric-newline-and-maybe-indent 'push-newline (current-global-map))
+
+(add-hook 'after-init-hook #'server-start)
