@@ -63,13 +63,13 @@
 (global-set-key (kbd "C-o") 'open-newline)
 
 ;; <n> dd
-(defun kill-whole-line()
+(defun kill-this-line()
   (interactive)
   (beginning-of-line nil)
   (kill-line 1))
 
 ;; Without: C-a C-k C-k
-(global-set-key (kbd "s-k") 'kill-whole-line)
+(global-set-key (kbd "s-k") 'kill-this-line)
 
 ;; <n> J
 (defun join-next-line()
