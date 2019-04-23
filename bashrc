@@ -4,7 +4,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# --- Important Environment Variables
+# --- VIm
+set -o vi
 export VISUAL=vim
 export EDITOR=vim
 
