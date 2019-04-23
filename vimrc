@@ -1,33 +1,10 @@
-" ----------------------------
-" Other source files
-" ----------------------------
+set nocompatible
+filetype plugin on
 
 " Configure runtimepath to include files from the dotfiles repo. This assumes
-" that ~/.vimrc is symlinked to <some-path>/dotfiles/vimrc and not copied
-" there. But, like, who would do that?
+" that ~/.vimrc is a symlink to <some-path>/dotfiles/vimrc and not a copy.
 let basedir = fnamemodify(resolve(expand('<sfile>:p')), ':p:h')
 execute 'set rtp+=' . basedir
-
-" ----------------------------
-" PLUGINS
-" ----------------------------
-set nocompatible
-" if filereadable(expand('~/.vim/bundle/Vundle.vim/README.md'))
-"   "  Plugins are managed by Vundle -- if Vundle isn't installed, then
-"   "  don't bother with setting it up
-"   filetype off
-"   set runtimepath+=~/.vim/bundle/Vundle.vim
-"
-"   call vundle#begin()
-"   Plugin 'VundleVim/Vundle.vim'
-"   Plugin 'scrooloose/NERDTree'
-"   Plugin 'tpope/vim-fugitive'
-"   Plugin 'tpope/vim-surround'
-"   Plugin 'mtth/scratch.vim'
-"   call vundle#end()
-" endif
-
-filetype plugin on
 
 " Insert-Mode-Only CAPSLOCK
 " To use this, type CTRL-^ (C-S-6) in either insert or search
