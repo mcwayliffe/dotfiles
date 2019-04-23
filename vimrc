@@ -118,13 +118,6 @@ nnoremap <silent> <Leader>r :redraw!<CR>
 " Insert newline
 nnoremap <C-n> O<Esc>
 
-" Scroll from the home row (except can't use <C-l>
-" because that's for tmux, so leave <C-u> as up
-" since that's a comfortable default anyway)
-nnoremap <C-j> <C-e>
-nnoremap <C-k> <C-y>
-nnoremap <C-h> <C-d>
-
 " Make backspace key work on Linux
 set backspace=2
 
