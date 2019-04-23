@@ -72,7 +72,6 @@ set splitbelow splitright
 " Simple smart indentation
 set autoindent
 
-
 " Show number of lines selected in Visual
 set showcmd
 
@@ -93,27 +92,9 @@ nnoremap <silent> <Leader>n :set relativenumber!<CR>
 " Open the NERDTree
 nnoremap <silent> <Leader>o :NERDTreeToggle<CR>
 
-" Quicker saves
-nnoremap <silent> <Leader>w :w<CR>
-
 " Switch tabs
 nnoremap <Leader>h gT
 nnoremap <Leader>l gt
-
-" Quit
-nnoremap <silent> <Leader>q :q<CR>
-
-" Force quit
-nnoremap <silent> <Leader>Q :q!<CR>
-
-" Force reopen
-nnoremap <silent> <Leader>E :e!<CR>
-
-" Remove search highlighting
-nnoremap <silent> <Leader>k :nohl<CR>
-
-" Force screen redraw
-nnoremap <silent> <Leader>r :redraw!<CR>
 
 " Insert newline
 nnoremap <C-n> O<Esc>
