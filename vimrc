@@ -134,25 +134,6 @@ vnoremap <silent> <Leader>/ :call CommentLine(getline('.'))<CR>
 " ----------------------------
 " Utility Functions
 " ----------------------------
-function! FixMarkdownNumbering()
-  let numbering_start = line('.')
-  let numbering_end   = line('.')
-  let numbering_pat   = '^[0-9]\+\.'
-  while match(getline(numbering_start), numbering_pat) != -1
-    let numbering_start = numbering_start - 1
-  endwhile
-  let numbering_start = numbering_start + 1
-
-  while match(getline(numbering_end), numbering_pat) != -1
-    let numbering_end = numbering_end + 1
-  endwhile
-  let numbering_end = numbering_end - 1
-
-  let awk_cmd = "awk -F'.' '{ $1=NR \".\" ; print $0 }'"
-  let range   = string(numbering_start) . "," . string(numbering_end)
-  execute range . "!" . awk_cmd
-endfunction
-
 function! CommentLine(line)
   let a:chars = split(a:line, '\zs')
   let length = len(a:chars)
@@ -183,14 +164,6 @@ function! CommentLine(line)
   endif
 endfunction
 
-function! GetCurWord()
-  return expand("<cword">)
-endfunction
-
-function! PrependToLines() range
-  let str = escape(input("Prepend: "), '\/.*$^~[]')
-  execute a:firstline . "," . a:lastline . 'substitute/^/' . str .'/'
-endfunction
 " ----------------------------
 " Filetypes
 " ----------------------------
