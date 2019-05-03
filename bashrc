@@ -5,7 +5,7 @@
 [ -z "$PS1" ] && return
 
 # --- VIm
-set -o vi
+# set -o vi
 export VISUAL=vim
 export EDITOR=vim
 
