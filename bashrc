@@ -4,6 +4,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# --- Some aliases
+alias ll='ls -lah'
+
 # --- VIm
 # set -o vi
 export VISUAL=vim
