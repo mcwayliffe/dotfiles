@@ -122,6 +122,15 @@ function! CommentLine(line)
   endif
 endfunction
 
+function! MaybeStripTrailingWhitespace()
+  " Don't strip whitespace in Markdown files
+  if (&ft == 'markdown')
+    return
+  endif
+  %s/\s\+$//e
+endfunction
+
+
 " ----------------------------
 " Filetypes
 " ----------------------------
@@ -148,4 +157,4 @@ autocmd Filetype gitcommit setlocal textwidth=80 spell
 " Helpers
 " ----------------------------
 " Strip trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * call MaybeStripTrailingWhitespace()
