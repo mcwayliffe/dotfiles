@@ -41,7 +41,7 @@ set ignorecase
 set smartcase
 
 " Clipboard integration
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Splits open where I expect them to
 set splitbelow splitright
