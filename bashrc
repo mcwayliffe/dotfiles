@@ -99,6 +99,10 @@ elif [[ "$(command uname)" == "Darwin" ]]; then
   alias ls='ls -G'
 fi
 
+# --- Turn off trackpad on laptop ---
+alias disable-trackpad='xinput set-prop $(xinput list | grep -i touchpad | cut -f 2 | cut -d = -f 2) "Device Enabled" 0'
+alias enable-trackpad='xinput set-prop $(xinput list | grep -i touchpad | cut -f 2 | cut -d = -f 2) "Device Enabled" 1'
+
 # --- Initialize pyenv ---
 if command -v pyenv &>/dev/null; then
   eval "$(pyenv init -)"
