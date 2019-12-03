@@ -63,6 +63,10 @@ set grepprg=git\ grep\ -n
 
 let mapleader="\<Space>"
 
+" Visual line navigation, because I don't write code that much any more
+nnoremap j gj
+nnoremap k gk
+
 " Toggle between relative and absolute numbering
 nnoremap <silent> <Leader>n :set relativenumber!<CR>
 
