@@ -78,7 +78,10 @@ nnoremap <Leader>h gT
 nnoremap <Leader>l gt
 
 " Insert newline
+" The original one that I used in vi
 nnoremap <C-n> O<Esc>
+" The new one that also works in emacs
+nnoremap <C-j> O<Esc>
 
 " Make backspace key work on Linux
 set backspace=2
